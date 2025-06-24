@@ -8,6 +8,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<CapacitacionCertificacionContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("conexion")));
 
+builder.Services.AddHostedService<RecordatorioService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
