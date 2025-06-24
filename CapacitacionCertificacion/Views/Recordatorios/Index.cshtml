@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CapacitacionCertificacion.Models.Recordatorio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEjecucion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MensajeRecord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoRecordNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEjecucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MensajeRecord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpNavigation.IdEmp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoRecordNavigation.IdTipoRecord)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdRecord">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdRecord">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdRecord">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,142 @@
+﻿@model CapacitacionCertificacion.Models.AsignacionesCurso
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(135deg, #001f3f, #1a3c4c);
+        font-family: 'Poppins', sans-serif;
+        color: #e0f7fa;
+        padding: 2rem;
+    }
+
+    h1 {
+        text-align: center;
+        color: #00f0ff;
+        font-weight: 800;
+        text-shadow: 0 0 10px #00f0ff;
+    }
+
+    h4 {
+        text-align: center;
+        color: #b2ebf2;
+        margin-bottom: 2rem;
+    }
+
+    .form-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid rgba(0, 229, 255, 0.3);
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: #4dd0e1;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        border: 1px solid #81d4fa;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #e0f7fa;
+        padding: 10px;
+    }
+
+        .form-control::placeholder {
+            color: #b2ebf2;
+        }
+
+    .btn-primary {
+        background: linear-gradient(90deg, #00e5ff, #1de9b6);
+        border: none;
+        color: #000;
+        padding: 10px 28px;
+        border-radius: 30px;
+        font-weight: 700;
+        box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-primary:hover {
+            transform: scale(1.06);
+            background: linear-gradient(90deg, #1de9b6, #00e5ff);
+            box-shadow: 0 6px 30px rgba(0, 255, 255, 0.6);
+        }
+
+    .text-danger {
+        color: #ff5252 !important;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #80deea;
+        font-weight: 500;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .back-link:hover {
+            color: #00bcd4;
+            text-shadow: 0 0 8px #00e5ff;
+        }
+</style>
+
+<h1>Editar</h1>
+
+
+<hr />
+<div class="form-container">
+    <h4>Asignación de Curso</h4>
+    
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdAsign" />
+            <div class="form-group">
+                <label class="control-label">Nombre del Empleado</label>
+                <select asp-for="IdEmp" class="form-control" asp-items="ViewBag.IdEmp"></select>
+                <span asp-validation-for="IdEmp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre del Curso</label>
+                <select asp-for="IdCurso" class="form-control" asp-items="ViewBag.IdCurso"></select>
+                <span asp-validation-for="IdCurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaAsign" class="control-label"></label>
+                <input asp-for="FechaAsign" type="date" class="form-control" />
+                <span asp-validation-for="FechaAsign" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFinalizacion" class="control-label"></label>
+                <input asp-for="FechaFinalizacion" type="date" class="form-control" />
+                <span asp-validation-for="FechaFinalizacion" class="text-danger"></span>
+            </div>
+        <div class="form-group text-center mt-4">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+        </form>
+
+    <div class="text-center">
+        <a asp-action="Index" class="back-link">← Volver a la lista</a>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

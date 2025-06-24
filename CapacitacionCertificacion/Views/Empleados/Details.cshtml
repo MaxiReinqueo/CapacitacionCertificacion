@@ -1,0 +1,90 @@
+﻿@model CapacitacionCertificacion.Models.Empleado
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Estilos futuristas exclusivos para DETALLES (con acentos púrpura y azul eléctrico) -->
+<style>
+    body {
+        background: linear-gradient(135deg, #1e1e2f, #2b2b4b);
+        font-family: 'Poppins', sans-serif;
+        color: #f0f0f0;
+        padding: 2rem;
+    }
+
+    h1 {
+        text-align: center;
+        color: #7c4dff;
+        font-weight: 700;
+        text-shadow: 0 0 10px #7c4dff;
+    }
+
+    h4 {
+        text-align: center;
+        color: #82b1ff;
+        margin-top: 1rem;
+    }
+
+    .details-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(124, 77, 255, 0.3);
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+    }
+
+    dt {
+        font-weight: 600;
+        color: #b388ff;
+    }
+
+    dd {
+        margin-bottom: 1rem;
+        color: #ffffff;
+    }
+
+    .action-links {
+        text-align: center;
+    }
+
+        .action-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #82b1ff;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+            .action-links a:hover {
+                color: #b388ff;
+                text-shadow: 0 0 8px #b388ff;
+            }
+</style>
+
+<h1>Detalles</h1>
+
+<div class="details-container">
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.NombreEmp)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.NombreEmp)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.CorreoEmp)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.CorreoEmp)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Departamento)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.FechaContratacion)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.FechaContratacion)</dd>
+    </dl>
+</div>
+
+<div class="action-links">
+    <a asp-action="Edit" asp-route-id="@Model?.IdEmp">Editar</a>
+    <a asp-action="Index">← Volver a la lista</a>
+</div>

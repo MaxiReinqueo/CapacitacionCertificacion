@@ -1,0 +1,163 @@
+﻿@{
+    ViewData["Title"] = "Quiénes Somos";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        padding: 2rem 0;
+    }
+
+    .titulo-principal {
+        text-align: center;
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #00e5ff;
+        text-shadow: 0 0 12px #00e5ff;
+        margin-bottom: 3rem;
+    }
+
+    .quienes-container {
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 1.5rem;
+        padding: 3rem 2rem;
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+        margin-bottom: 4rem;
+    }
+
+    .img-logo {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 1rem;
+        box-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+    }
+
+    .texto-info {
+        font-size: 1.15rem;
+        color: #b2ebf2;
+        line-height: 1.8;
+        font-weight: 400;
+    }
+
+        .texto-info strong {
+            color: #1de9b6;
+        }
+
+    .mision-box {
+        background-color: rgba(255, 255, 255, 0.04);
+        border-radius: 1.25rem;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 0 20px rgba(0,229,255,0.08);
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+
+        .mision-box h3 {
+            color: #64ffda;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .mision-box p {
+            color: #b2ebf2;
+            font-size: 1.1rem;
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+    .card-futurista {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(0,229,255,0.08);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 8px 24px rgba(0, 229, 255, 0.08);
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: #e0f7fa;
+    }
+
+        .card-futurista:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 32px rgba(0, 229, 255, 0.2);
+        }
+
+        .card-futurista i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00e5ff;
+            transition: color 0.3s ease;
+        }
+
+        .card-futurista:hover i {
+            color: #1de9b6;
+        }
+
+        .card-futurista h5 {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #00e5ff;
+        }
+
+        .card-futurista p {
+            font-weight: 400;
+            color: #b2ebf2;
+        }
+</style>
+
+<section class="quienes-container container">
+    <h1 class="titulo-principal">¿Quiénes Somos?</h1>
+
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-7 text-center mb-4 mb-lg-0">
+            <img src="https://pbs.twimg.com/profile_images/879764732961579008/JBxY6lp0_400x400.jpg"
+                 alt="Logo Taltura"
+                 class="img-fluid img-logo" />
+        </div>
+        <div class="col-lg-5">
+            <p class="texto-info">
+                En <strong>Taltura Capacitación & Certificación Digital</strong> somos líderes en soluciones de formación y certificación para empresas en Chile. Desde 2015, combinamos experiencia en recursos humanos y tecnología educativa para impulsar el desarrollo profesional y el cumplimiento normativo.
+            </p>
+            <p class="texto-info">
+                Nuestro equipo está compuesto por 45 colaboradores especializados y más de 120 relatores externos, quienes garantizan programas actualizados, certificados válidos y contenidos adaptados al contexto chileno.
+            </p>
+        </div>
+    </div>
+
+    <div class="mision-box">
+        <h3>Nuestra Misión</h3>
+        <p>
+            Facilitar el crecimiento de las organizaciones a través de plataformas digitales seguras, modulares y escalables que optimizan la capacitación, gestión de certificaciones y auditorías, siempre alineados con las normativas vigentes y las mejores prácticas ágiles.
+        </p>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card-futurista">
+                <i class="bi bi-people-fill"></i>
+                <h5>Equipo Experto</h5>
+                <p>Profesionales apasionados que garantizan calidad y actualidad en cada programa.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card-futurista">
+                <i class="bi bi-layers-fill"></i>
+                <h5>Tecnología Moderna</h5>
+                <p>Sistemas robustos basados en .NET, MVC y Entity Framework para una experiencia eficiente.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card-futurista">
+                <i class="bi bi-award-fill"></i>
+                <h5>Certificaciones Oficiales</h5>
+                <p>Emisión y gestión digital conforme a las normativas chilenas vigentes.</p>
+            </div>
+        </div>
+    </div>
+</section>

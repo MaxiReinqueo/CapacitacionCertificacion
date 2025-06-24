@@ -1,0 +1,142 @@
+﻿@model CapacitacionCertificacion.Models.AsignacionesCurso
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        font-family: 'Poppins', sans-serif;
+        color: #f5f5f5;
+        padding: 2rem;
+    }
+
+    h1, h3, h4 {
+        text-align: center;
+        font-weight: 700;
+        text-shadow: 0 0 10px #00e5ff;
+        color: #00e5ff;
+        margin-bottom: 1rem;
+    }
+
+    .form-container, .details-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+    }
+
+    .form-group label, dt {
+        font-weight: 600;
+        color: #64ffda;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #64ffda;
+        background-color: transparent;
+        color: #fff;
+    }
+
+        .form-control::placeholder {
+            color: #bbb;
+        }
+
+    .btn-primary, .btn-danger {
+        background: linear-gradient(90deg, #00c6ff, #0072ff);
+        border: none;
+        color: white;
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,198,255,0.5);
+    }
+
+    .btn-danger {
+        background: linear-gradient(90deg, #ff1744, #d50000);
+        box-shadow: 0 4px 15px rgba(255,23,68,0.5);
+    }
+
+        .btn-primary:hover, .btn-danger:hover {
+            transform: scale(1.05);
+        }
+
+    .text-danger {
+        color: #ff8a80;
+    }
+
+    .back-link, .action-links a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #64ffda;
+        font-weight: 500;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .back-link:hover, .action-links a:hover {
+            color: #1de9b6;
+            text-shadow: 0 0 8px #1de9b6;
+        }
+
+    dd {
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+</style>
+
+
+<h1>Crear Asignaciones de Curso</h1>
+
+<hr />
+<div class="form-container">
+    
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Nombre del Empleado</label>
+                <select asp-for="IdEmp" class ="form-control" asp-items="ViewBag.IdEmp">
+                    <option value="">Seleccione nombre del Empleado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre del Curso</label>
+                <select asp-for="IdCurso" class ="form-control" asp-items="ViewBag.IdCurso">
+                    <option value="">Seleccione nombre del Curso</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaAsign" class="control-label"></label>
+            <input asp-for="FechaAsign" type="date" class="form-control" />
+                <span asp-validation-for="FechaAsign" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" placeholder="Estado" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFinalizacion" class="control-label"></label>
+                <input asp-for="FechaFinalizacion" type="date" class="form-control" />
+                <span asp-validation-for="FechaFinalizacion" class="text-danger"></span>
+            </div>
+        <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    
+
+
+<div class="text-center">
+    <a asp-action="Index" class="back-link">← Volver a la lista</a>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

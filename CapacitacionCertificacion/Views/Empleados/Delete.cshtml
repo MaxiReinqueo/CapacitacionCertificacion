@@ -1,0 +1,109 @@
+﻿@model CapacitacionCertificacion.Models.Empleado
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<!-- Estilos futuristas para eliminar (diferenciado con rojo intenso y neón) -->
+<style>
+    body {
+        background: linear-gradient(135deg, #2c0b0e, #1b1b1b);
+        font-family: 'Poppins', sans-serif;
+        color: #f5f5f5;
+        padding: 2rem;
+    }
+
+    h1, h3 {
+        text-align: center;
+        color: #ff5252;
+        font-weight: 700;
+        text-shadow: 0 0 12px #ff5252;
+    }
+
+    h4 {
+        text-align: center;
+        color: #ff8a65;
+        margin-top: 1rem;
+    }
+
+    .details-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(255, 82, 82, 0.3);
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+    }
+
+    dt {
+        font-weight: 600;
+        color: #ffab91;
+    }
+
+    dd {
+        margin-bottom: 1rem;
+        color: #ffffff;
+    }
+
+    .btn-danger {
+        background: linear-gradient(90deg, #ff1744, #d50000);
+        border: none;
+        color: white;
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(255,23,68,0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,23,68,0.8);
+        }
+
+    .back-link {
+        margin-left: 15px;
+        text-decoration: none;
+        color: #64ffda;
+        font-weight: 500;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .back-link:hover {
+            color: #1de9b6;
+            text-shadow: 0 0 8px #1de9b6;
+        }
+
+    form {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+</style>
+
+<h1>Eliminar</h1>
+<h3>¿Estás seguro de que deseas eliminar este empleado?</h3>
+
+<div class="details-container">
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.NombreEmp)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.NombreEmp)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.CorreoEmp)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.CorreoEmp)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Departamento)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.FechaContratacion)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.FechaContratacion)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdEmp" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index" class="back-link">← Volver a la lista</a>
+    </form>
+</div>

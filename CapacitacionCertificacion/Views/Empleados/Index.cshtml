@@ -1,0 +1,120 @@
+﻿@model IEnumerable<CapacitacionCertificacion.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Estilos Futuristas y Profesionales -->
+<style>
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        font-family: 'Poppins', sans-serif;
+        color: #f5f5f5;
+        padding: 2rem;
+    }
+
+    h1 {
+        text-align: center;
+        color: #00e5ff;
+        margin-bottom: 2.5rem;
+        font-weight: 700;
+        text-shadow: 0 0 10px #00e5ff;
+    }
+
+    .btn-create {
+        display: inline-block;
+        background: linear-gradient(90deg, #00c6ff, #0072ff);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,198,255,0.5);
+        margin-bottom: 25px;
+    }
+
+        .btn-create:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+        }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        color: #ffffff; /* Color del texto de celdas */
+    }
+
+        .table thead {
+            background: rgba(0, 229, 255, 0.1);
+            color: #00e5ff; /* Color de encabezados */
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .table th, .table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .table tbody tr {
+            transition: background 0.3s ease;
+        }
+
+            .table tbody tr:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+    .action-links a {
+        margin-right: 10px;
+        color: #64ffda;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .action-links a:hover {
+            color: #1de9b6;
+            text-shadow: 0 0 8px #1de9b6;
+        }
+</style>
+
+<h1>Registro de Empleados</h1>
+
+<p>
+    <a asp-action="Create" class="btn-create">+ Crear Nuevo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NombreEmp)</th>
+            <th>@Html.DisplayNameFor(model => model.CorreoEmp)</th>
+            <th>@Html.DisplayNameFor(model => model.Departamento)</th>
+            <th>@Html.DisplayNameFor(model => model.FechaContratacion)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.NombreEmp)</td>
+                <td>@Html.DisplayFor(modelItem => item.CorreoEmp)</td>
+                <td>@Html.DisplayFor(modelItem => item.Departamento)</td>
+                <td>@Html.DisplayFor(modelItem => item.FechaContratacion)</td>
+                <td class="action-links">
+                    <a asp-action="Edit" asp-route-id="@item.IdEmp">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdEmp">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdEmp">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
